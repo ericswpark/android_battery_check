@@ -17,4 +17,4 @@ The health information may be incorrect as it is calculated based on the data se
 2. Make sure `adb.exe` and `AdbWinApi.dll` is within the same directory as the executable (or, make sure they are in the PATH!)
 3. Run the executable in `cmd`.
 
-Note: in some cases, the device may report a higher battery design capacity than the actual value. (For example, my Note 20 Ultra reported a battery design capacity of 4,500 mAh, when the actual design capacity was 4,370 mAh.) If you would like to re-calculate the statistics, run the executable with the `-c` flag. The tool will prompt you to enter a custom battery design capacity value.
+Note: in some cases, the device may report a higher battery design capacity than the actual value. (For example, my Note 20 Ultra reported a battery design capacity of 4,500 mAh, when the actual design capacity was 4,370 mAh.) If you would like to specify a custom design capacity, run the executable with the `-c` flag.
