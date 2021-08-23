@@ -20,3 +20,13 @@ The health information may be incorrect as it is calculated based on the data se
 Note: in some cases, the device may report a higher battery design capacity than the actual value. (For example, my Note 20 Ultra reported a battery design capacity of 4,500 mAh, when the actual design capacity was 4,370 mAh.) If you would like to specify a custom design capacity, run the executable with the `-c` flag.
 
 [latest-executable]: https://github.com/ericswpark/android_battery_check/releases/latest/download/android_battery_check.exe
+
+# Troubleshooting
+
+If the program crashes or doesn't produce any output, it's due to one of the following:
+
+- The ADB tool and the supporting dependencies are not in your PATH or in the current directory
+- Your device is not connected
+- ADB is not enabled in developer options
+- You didn't "trust" the current connected computer for ADB connections (unauthorized)
+- Your device's battery driver returned unexpected values
