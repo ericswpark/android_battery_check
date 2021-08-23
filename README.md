@@ -19,4 +19,4 @@ The health information may be incorrect as it is calculated based on the data se
 
 Note: in some cases, the device may report a higher battery design capacity than the actual value. (For example, my Note 20 Ultra reported a battery design capacity of 4,500 mAh, when the actual design capacity was 4,370 mAh.) If you would like to specify a custom design capacity, run the executable with the `-c` flag.
 
-[latest-executable]: https://github.com/ericswpark/awipe/releases/latest/download/android_battery_check.exe
+[latest-executable]: https://github.com/ericswpark/android_battery_check/releases/latest/download/android_battery_check.exe
