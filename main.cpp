@@ -61,4 +61,8 @@ int main(int argc, char **argv)
 
 		print_statistics(custom_battery_health, current_max_capacity, custom_battery_design_capacity, level);
 	}
+
+	// In case the user directly ran the program, stop at end and wait for input
+	std::cout << "Press Enter to exit." << std::endl;
+	std::cin.get();
 }
