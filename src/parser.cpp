@@ -17,6 +17,6 @@ std::string fetch_value_from_key(std::string input, std::string key)
 	catch (const std::out_of_range& oor)
 	{
 		std::cerr << "Key not found within output!" << std::endl;
-		return "-1";
+		exit(1);
 	}
 }

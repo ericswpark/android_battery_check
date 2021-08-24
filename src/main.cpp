@@ -53,7 +53,7 @@ int main(int argc, char **argv)
 		{
 			std::cerr << "Error parsing battery design capacity." << std::endl;
 			exit_confirm();
-			return 1;
+			exit(1);
 		}
 	}
 	
