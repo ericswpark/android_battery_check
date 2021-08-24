@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <format>
 
 #include "cmd.h"
@@ -18,6 +18,12 @@ void print_statistics(double battery_health, double max_capacity, double design_
 	std::cout << "Battery design capacity: " << design_capacity << "mAh" << std::endl;
 	std::cout << "Current charge level: " << level << "%" << std::endl;
 	std::cout << std::endl;
+}
+
+void exit_confirm()
+{
+	std::cout << "Press Enter to exit." << std::endl;
+	std::cin.get();
 }
 
 int main(int argc, char **argv)
@@ -45,6 +51,7 @@ int main(int argc, char **argv)
 		catch (const std::invalid_argument& ia)
 		{
 			std::cerr << "Error parsing battery design capacity." << std::endl;
+			exit_confirm();
 			return 1;
 		}
 	}
@@ -55,6 +62,5 @@ int main(int argc, char **argv)
 	print_statistics(battery_health, current_max_capacity, battery_design_capacity, level);
 
 	// In case the user directly ran the program, stop at end and wait for input
-	std::cout << "Press Enter to exit." << std::endl;
-	std::cin.get();
+	exit_confirm();
 }
