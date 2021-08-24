@@ -30,34 +30,29 @@ int main(int argc, char **argv)
 	int level = std::stoi(fetch_value_from_key(dumpsys_output, "level:"));
 	int current_charge_level = std::stoi(fetch_value_from_key(dumpsys_output, "Charge counter:"));
 	int battery_design_capacity = -1;
-	try
+	
+	if (argc == 2 && strcmp(argv[1], "-c") == 0)
 	{
-		battery_design_capacity = std::stoi(sysclass_charge_full_output) / 1000;
+		std::cout << "Enter custom battery design capacity: ";
+		std::cin >> battery_design_capacity;
 	}
-	catch (const std::invalid_argument& ia)
+	else
 	{
-		std::cerr << "Error parsing battery design capacity." << std::endl;
-		return 1;
+		try
+		{
+			battery_design_capacity = std::stoi(sysclass_charge_full_output) / 1000;
+		}
+		catch (const std::invalid_argument& ia)
+		{
+			std::cerr << "Error parsing battery design capacity." << std::endl;
+			return 1;
+		}
 	}
 	
 	double current_max_capacity = (double)current_charge_level / (double)level * 100 / 1000;
 	double battery_health = current_max_capacity / (double)battery_design_capacity * 100;
 
 	print_statistics(battery_health, current_max_capacity, battery_design_capacity, level);
-
-	// Check custom argument
-	if (argc == 2 && strcmp(argv[1], "-c") == 0)
-	{
-		// Enter custom amount
-		std::cout << "Recalculating health based on custom battery design capacity." << std::endl;
-		std::cout << "Enter custom battery design capacity: ";
-		int custom_battery_design_capacity;
-		std::cin >> custom_battery_design_capacity;
-
-		double custom_battery_health = current_max_capacity / (double)custom_battery_design_capacity * 100;
-
-		print_statistics(custom_battery_health, current_max_capacity, custom_battery_design_capacity, level);
-	}
 
 	// In case the user directly ran the program, stop at end and wait for input
 	std::cout << "Press Enter to exit." << std::endl;
