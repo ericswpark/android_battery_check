@@ -21,9 +21,11 @@
   <ItemGroup>
     <ClCompile Include="src\cmd.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\parser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\cmd.h" />
+    <ClInclude Include="src\parser.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
