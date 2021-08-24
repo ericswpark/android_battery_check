@@ -13,7 +13,7 @@ void print_statistics(double battery_health, double max_capacity, double design_
 	std::cout << std::endl;
 
 	// Output detailed statistics
-	std::cout << "These results were calculated with the following raw data obtained from the device:" << std::endl;
+	std::cout << "These results were calculated with the following raw data:" << std::endl;
 	std::cout << "Current max capacity: " << max_capacity << "mAh" << std::endl;
 	std::cout << "Battery design capacity: " << design_capacity << "mAh" << std::endl;
 	std::cout << "Current charge level: " << level << "%" << std::endl;
