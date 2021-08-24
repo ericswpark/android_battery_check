@@ -6,7 +6,7 @@ Tool to check battery health on Android phones
 
 This tool was tested on the following devices:
 
-- Samsung Galaxy S8+ (dream2lteks)
+- Samsung Galaxy S8+ (dream2lte)
 - Samsung Note 20 Ultra 5G (c2q)
 
 The health information may be incorrect as it is calculated based on the data sent over by the battery driver, which may or may not be accurate. In addition, the battery driver implementation is different across Android devices.
