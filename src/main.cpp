@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <format>
 
 #include "cmd.h"
@@ -32,7 +32,16 @@ int main(int argc, char **argv)
 	// Calculate battery statistics
 	int level = std::stoi(fetch_value_from_key(dumpsys_output, "level:"));
 	int current_charge_level = std::stoi(fetch_value_from_key(dumpsys_output, "Charge counter:"));
-	int battery_design_capacity = std::stoi(sysclass_charge_full_output) / 1000;
+	int battery_design_capacity = -1;
+	try
+	{
+		battery_design_capacity = std::stoi(sysclass_charge_full_output) / 1000;
+	}
+	catch (const std::invalid_argument& ia)
+	{
+		std::cerr << "Error parsing battery design capacity." << std::endl;
+		return 1;
+	}
 	
 	double current_max_capacity = (double)current_charge_level / (double)level * 100 / 1000;
 	double battery_health = current_max_capacity / (double)battery_design_capacity * 100;
