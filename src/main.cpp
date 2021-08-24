@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <format>
 
 #include "cmd.h"
@@ -41,6 +41,7 @@ int main(int argc, char **argv)
 	{
 		std::cout << "Enter custom battery design capacity: ";
 		std::cin >> battery_design_capacity;
+		std::cin.ignore();
 	}
 	else
 	{
