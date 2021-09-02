@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <format>
 
 #include "cmd.h"
@@ -63,7 +63,7 @@ int main(int argc, char **argv)
 		}
 		catch (const std::invalid_argument& ia)
 		{
-			std::cerr << "Error parsing battery design capacity." << std::endl;
+			std::cerr << "Error parsing battery design capacity. Your device may not support reporting this value through the battery driver." << std::endl;
 			exit_confirm();
 			exit(1);
 		}
