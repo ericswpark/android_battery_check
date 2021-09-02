@@ -64,6 +64,7 @@ int main(int argc, char **argv)
 		catch (const std::invalid_argument& ia)
 		{
 			std::cerr << "Error parsing battery design capacity. Your device may not support reporting this value through the battery driver." << std::endl;
+			std::cerr << "Please manually define the battery design capacity using the `-c` flag." << std::endl;
 			exit_confirm();
 			exit(1);
 		}
