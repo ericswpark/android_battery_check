@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <format>
 
 #include "cmd.h"
@@ -33,9 +33,21 @@ int main(int argc, char **argv)
 	std::string sysclass_charge_full_output = exec("adb shell cat /sys/class/power_supply/battery/charge_full");
 
 	// Calculate battery statistics
-	int level = std::stoi(fetch_value_from_key(dumpsys_output, "level:"));
-	int current_charge_level = std::stoi(fetch_value_from_key(dumpsys_output, "Charge counter:"));
+	int level = -1;
+	int current_charge_level = -1;
 	int battery_design_capacity = -1;
+
+	try
+	{
+		level = std::stoi(fetch_value_from_key(dumpsys_output, "level:"));
+		current_charge_level = std::stoi(fetch_value_from_key(dumpsys_output, "Charge counter:"));
+	}
+	catch (const std::out_of_range& oor)
+	{
+		std::cerr << "Key not found within output! Check the adb output above." << std::endl;
+		exit_confirm();
+		exit(1);
+	}
 	
 	if (argc == 2 && strcmp(argv[1], "-c") == 0)
 	{
