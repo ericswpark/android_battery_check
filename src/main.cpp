@@ -48,6 +48,15 @@ int main(int argc, char **argv)
 		exit_confirm();
 		exit(1);
 	}
+
+	// Add check for charge level
+	if (current_charge_level == 0)
+	{
+		std::cout << "Warning: your device reported an invalid charge level value." << std::endl;
+		std::cout << "Your device's battery driver may not support reporting the battery capacity." << std::endl;
+		std::cout << "Statistics calculated by this tool may be inaccurate." << std::endl;
+	}
+
 	
 	if (argc == 2 && strcmp(argv[1], "-c") == 0)
 	{
