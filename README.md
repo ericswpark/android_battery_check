@@ -14,8 +14,8 @@ In addition, the battery driver implementation is different across Android devic
 
 # Usage
 
-1. [Download the latest executable][latest-executable] from the "Releases" tab.
-2. Make sure `adb.exe` and `AdbWinApi.dll` is within the same directory as the executable (or, make sure they are in the PATH!)
+1. Download the latest release from the "Releases" tab.
+2. Make sure the `adb` utility is in your PATH.
 3. Enable USB debugging under Developer Options.
 4. Trust the computer if the dialog shows up on your phone.
 5. Run the executable in `cmd`.
@@ -23,8 +23,6 @@ In addition, the battery driver implementation is different across Android devic
 Note: in some cases, the device may report a higher battery design capacity than the actual value.
 (For example, my Note 20 Ultra reported a battery design capacity of 4,500 mAh, when the actual design capacity was 4,370 mAh.)
 If you would like to specify a custom design capacity, run the executable with the `-c` flag.
-
-[latest-executable]: https://github.com/ericswpark/android_battery_check/releases/latest/download/android_battery_check_win_x64.exe
 
 # Building
 
