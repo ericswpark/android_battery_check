@@ -26,6 +26,12 @@ If you would like to specify a custom design capacity, run the executable with t
 
 [latest-executable]: https://github.com/ericswpark/android_battery_check/releases/latest/download/android_battery_check_win_x64.exe
 
+# Building
+
+Brief overview: get CMake, create a `_builds` directory, configure and generate the project files.
+
+This section is still a WIP.
+
 # Troubleshooting
 
 If the program crashes or doesn't produce any output, it's due to one of the following:

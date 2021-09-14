@@ -421,4 +421,5 @@ FodyWeavers.xsd
 *.sln.iml
 .DS_Store
 
-android_battery_check
+# Ignore CMake build folder
+_builds/
