@@ -28,7 +28,19 @@ If you would like to specify a custom design capacity, run the executable with t
 
 Brief overview: get CMake, create a `_builds` directory, configure and generate the project files.
 
-This section is still a WIP.
+For debugging:
+
+    cmake -H. -B_builds/Debug -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles"   # or some other generator
+
+For release:
+
+    cmake -H. -B_builds/Release -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles"
+
+Then run a build:
+
+    cmake --build _builds/Debug
+    cmake --build _builds/Release
+
 
 # Troubleshooting
 
