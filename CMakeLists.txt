@@ -7,6 +7,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Write current version to header file
 configure_file(src/version.h.in version.h)
 
+# Set compiler flags
+set(CMAKE_CXX_FLAGS "-Wall -Wextra")
+set(CMAKE_CXX_FLAGS_DEBUG "-g")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+
 set(SOURCES
     src/main.cpp
     src/cmd.cpp
