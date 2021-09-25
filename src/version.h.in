@@ -1,0 +1,3 @@
+#define VERSION_MAJOR @android_battery_check_VERSION_MAJOR@
+#define VERSION_MINOR @android_battery_check_VERSION_MINOR@
+#define VERSION_PATCH @android_battery_check_VERSION_PATCH@

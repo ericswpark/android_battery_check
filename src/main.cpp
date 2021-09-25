@@ -2,6 +2,7 @@
 
 #include "cmd.h"
 #include "parser.h"
+#include "version.h"
 
 void print_statistics(double battery_health, double max_capacity, double design_capacity, int level)
 {
@@ -25,8 +26,15 @@ void exit_confirm()
 	std::cin.get();
 }
 
+void print_version_info()
+{
+	std::cout << "android_battery_check v" << VERSION_MAJOR << "." << VERSION_MINOR << "." << VERSION_PATCH << std::endl;
+}
+
 int main(int argc, char **argv)
 {
+	print_version_info();
+
 	// Get output from ADB
 	std::string dumpsys_output = exec("adb shell dumpsys battery");
 	std::string sysclass_charge_full_output = exec("adb shell cat /sys/class/power_supply/battery/charge_full");

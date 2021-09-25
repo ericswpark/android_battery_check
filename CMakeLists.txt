@@ -3,7 +3,9 @@ project(android_battery_check VERSION 1.0.2)
 
 set(CMAKE_CXX_STANDARD          17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS        OFF)
+
+# Write current version to header file
+configure_file(src/version.h.in version.h)
 
 set(SOURCES
     src/main.cpp
@@ -12,3 +14,5 @@ set(SOURCES
 )
 
 add_executable(android_battery_check ${SOURCES})
+
+target_include_directories(android_battery_check PRIVATE "${PROJECT_BINARY_DIR}")
