@@ -30,11 +30,11 @@ Brief overview: get CMake, create a `_builds` directory, configure and generate 
 
 For debugging:
 
-    cmake -H. -B_builds/Debug -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles"   # or some other generator
+    cmake -H. -B_builds/Debug -DCMAKE_BUILD_TYPE=Debug
 
 For release:
 
-    cmake -H. -B_builds/Release -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles"
+    cmake -H. -B_builds/Release -DCMAKE_BUILD_TYPE=Release
 
 Then run a build:
 
