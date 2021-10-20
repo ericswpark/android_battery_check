@@ -40,9 +40,7 @@ int main(int argc, char **argv)
 	std::string sysclass_charge_full_output = exec("adb shell cat /sys/class/power_supply/battery/charge_full");
 
 	// Calculate battery statistics
-	int level = -1;
-	int current_charge_level = -1;
-	int battery_design_capacity = -1;
+	int level, current_charge_level, battery_design_capacity;
 
 	try
 	{
