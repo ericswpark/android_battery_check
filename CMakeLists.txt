@@ -13,12 +13,12 @@ set(CMAKE_CXX_FLAGS "-Wall -Wextra")
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
-set(SOURCES
+set(SOURCE_FILES
     src/main.cpp
     src/cmd.cpp
     src/parser.cpp
 )
 
-add_executable(android_battery_check ${SOURCES})
+add_executable(android_battery_check ${SOURCE_FILES})
 
 target_include_directories(android_battery_check PRIVATE "${PROJECT_BINARY_DIR}")
