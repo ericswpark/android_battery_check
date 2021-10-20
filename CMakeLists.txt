@@ -3,6 +3,7 @@ project(android_battery_check VERSION 1.0.2)
 
 set(CMAKE_CXX_STANDARD          17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # Write current version to header file
 configure_file(src/version.h.in version.h)
