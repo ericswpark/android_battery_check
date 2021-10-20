@@ -422,4 +422,4 @@ FodyWeavers.xsd
 .DS_Store
 
 # Ignore CMake build folder
-_builds/
+build/
