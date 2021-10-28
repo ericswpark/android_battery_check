@@ -81,6 +81,10 @@ int main(int argc, char **argv)
     {
         std::cerr << "Warning: failed to fetch the battery cycle count." << std::endl;
     }
+	catch (...)
+	{
+		std::cerr << "Warning: an unknown error occurred while parsing the battery cycle count." << std::endl;
+	}
 
 	// Add check for charge level
 	if (current_charge_level == 0)
