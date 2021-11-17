@@ -17,8 +17,11 @@ In addition, the battery driver implementation is different across Android devic
 1. Download the latest release from the "Releases" tab.
 2. Make sure the `adb` utility is in your PATH.
 3. Enable USB debugging under Developer Options.
-4. Trust the computer if the dialog shows up on your phone.
-5. Run the executable in `cmd`.
+4. Connect your phone to your computer using one of the following methods:
+    - Wirelessly pair ADB. This is recommended as you do not need cables. Use `adb pair` with the pairing code. Note that this only works on devices with Android 11 or later. Older Android revisions may still be able to connect over Wi-Fi using `adb connect`.
+    - Use a cable.
+6. Trust the computer if the dialog shows up on your phone.
+7. Run the executable in `cmd`.
 
 Note: in some cases, the device may report a higher battery design capacity than the actual value.
 (For example, my Note 20 Ultra reported a battery design capacity of 4,500 mAh, when the actual design capacity was 4,370 mAh.)
