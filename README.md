@@ -2,6 +2,10 @@
 
 Tool to check battery health on Android phones
 
+## Deprecation notice
+
+This appears to have been patched in recent Android versions by different manufacturers. This tool will most likely not work.
+
 # Warning
 
 This tool was tested on the following devices:
